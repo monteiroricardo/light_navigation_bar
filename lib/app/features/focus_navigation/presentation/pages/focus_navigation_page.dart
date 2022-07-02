@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:focus_navigation/app/features/focus_navigation/presentation/style/focus_navigation_style.dart';
+import 'package:focus_navigation/app/features/focus_navigation/presentation/widgets/focus_navigation_item.dart';
 import 'package:focus_navigation/app/features/focus_navigation/presentation/widgets/focus_navigation_widget.dart';
 
 class FocusNavigationPage extends StatefulWidget {
@@ -13,7 +15,46 @@ class _FocusNavigationPageState extends State<FocusNavigationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(),
-      bottomNavigationBar: const FocusNavigationWidget(),
+      bottomNavigationBar: FocusNavigationWidget(
+        items: [
+          FocusNavigationItem(
+            onTap: () {},
+            activeIcon: Icons.settings,
+            isActive: true,
+            focusNavigationStyle: FocusNavigationStyle(
+              primaryColor: Colors.blue,
+              inactiveColor: Colors.grey,
+            ),
+          ),
+          FocusNavigationItem(
+            onTap: () {},
+            activeIcon: Icons.settings,
+            isActive: false,
+            focusNavigationStyle: FocusNavigationStyle(
+              primaryColor: Colors.blue,
+              inactiveColor: Colors.grey,
+            ),
+          ),
+          FocusNavigationItem(
+            onTap: () {},
+            activeIcon: Icons.settings,
+            isActive: false,
+            focusNavigationStyle: FocusNavigationStyle(
+              primaryColor: Colors.blue,
+              inactiveColor: Colors.grey,
+            ),
+          ),
+          FocusNavigationItem(
+            onTap: () {},
+            activeIcon: Icons.settings,
+            isActive: false,
+            focusNavigationStyle: FocusNavigationStyle(
+              primaryColor: Colors.blue,
+              inactiveColor: Colors.grey,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
