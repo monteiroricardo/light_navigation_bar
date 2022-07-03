@@ -4,21 +4,21 @@ part 'focus_navigation_item.dart';
 part 'focus_navigation_tile.dart';
 part 'focus_navigation_style.dart';
 
-class FocusNavigationWidget extends StatefulWidget {
+class FocusNavigationBar extends StatefulWidget {
   final List<FocusNavigationItem> items;
   final int activeMenu;
 
-  const FocusNavigationWidget({
+  const FocusNavigationBar({
     super.key,
     required this.items,
     required this.activeMenu,
   });
 
   @override
-  State<FocusNavigationWidget> createState() => _FocusNavigationWidgetState();
+  State<FocusNavigationBar> createState() => _FocusNavigationBarState();
 }
 
-class _FocusNavigationWidgetState extends State<FocusNavigationWidget> {
+class _FocusNavigationBarState extends State<FocusNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Container(

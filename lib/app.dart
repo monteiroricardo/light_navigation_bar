@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:focus_navigation/app/features/focus_navigation/presentation/pages/focus_navigation_page.dart';
+import 'package:focus_navigation/app/focus_navigation/presentation/pages/focus_navigation_page.dart';
 
 void initApplication() {
   runApp(

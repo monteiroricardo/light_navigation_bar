@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:focus_navigation/app/features/focus_navigation/presentation/widgets/focus_navigation_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import '../widget/focus_navigation_bar.dart';
 
 class FocusNavigationPage extends StatefulWidget {
   const FocusNavigationPage({Key? key}) : super(key: key);
@@ -16,7 +17,7 @@ class _FocusNavigationPageState extends State<FocusNavigationPage> {
     return Scaffold(
       backgroundColor: const Color(0xFFEFF1F4),
       body: Container(),
-      bottomNavigationBar: FocusNavigationWidget(
+      bottomNavigationBar: FocusNavigationBar(
         items: [
           FocusNavigationItem(
             onTap: () {

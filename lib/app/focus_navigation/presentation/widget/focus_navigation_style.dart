@@ -1,4 +1,4 @@
-part of 'focus_navigation_widget.dart';
+part of 'focus_navigation_bar.dart';
 
 class FocusNavigationStyle {
   final Color primaryColor;
