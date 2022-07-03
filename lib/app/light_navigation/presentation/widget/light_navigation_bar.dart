@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
 
-part 'focus_navigation_item.dart';
-part 'focus_navigation_tile.dart';
-part 'focus_navigation_style.dart';
+part 'light_navigation_item.dart';
+part 'light_navigation_tile.dart';
+part 'light_navigation_style.dart';
 
-class FocusNavigationBar extends StatefulWidget {
-  final List<FocusNavigationItem> items;
+class LightNavigationBar extends StatefulWidget {
+  final List<LightNavigationItem> items;
   final int activeMenu;
+  final Duration? animationDuration;
 
-  const FocusNavigationBar({
+  const LightNavigationBar({
     super.key,
     required this.items,
     required this.activeMenu,
+    this.animationDuration,
   });
 
   @override
-  State<FocusNavigationBar> createState() => _FocusNavigationBarState();
+  State<LightNavigationBar> createState() => _LightNavigationBarState();
 }
 
-class _FocusNavigationBarState extends State<FocusNavigationBar> {
+class _LightNavigationBarState extends State<LightNavigationBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -29,9 +31,10 @@ class _FocusNavigationBarState extends State<FocusNavigationBar> {
         children: [
           ...widget.items
               .map(
-                (e) => FocusNavigationTile(
+                (e) => LightNavigationTile(
                   item: e,
                   isActive: widget.items.indexOf(e) == widget.activeMenu,
+                  animationDuration: widget.animationDuration,
                 ),
               )
               .toList()

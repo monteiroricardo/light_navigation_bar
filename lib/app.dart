@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:focus_navigation/app/focus_navigation/presentation/pages/focus_navigation_page.dart';
+
+import 'app/light_navigation/presentation/pages/light_navigation_page.dart';
 
 void initApplication() {
   runApp(
@@ -19,7 +20,7 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FocusNavigationPage(),
+      home: LightNavigationPage(),
     );
   }
 }

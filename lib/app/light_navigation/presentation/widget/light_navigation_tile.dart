@@ -1,20 +1,22 @@
-part of 'focus_navigation_bar.dart';
+part of 'light_navigation_bar.dart';
 
-class FocusNavigationTile extends StatefulWidget {
+class LightNavigationTile extends StatefulWidget {
   final bool isActive;
-  final FocusNavigationItem item;
+  final LightNavigationItem item;
+  final Duration? animationDuration;
 
-  const FocusNavigationTile({
+  const LightNavigationTile({
     Key? key,
     required this.item,
     required this.isActive,
+    this.animationDuration,
   }) : super(key: key);
 
   @override
-  State<FocusNavigationTile> createState() => _FocusNavigationTileState();
+  State<LightNavigationTile> createState() => _LightNavigationTileState();
 }
 
-class _FocusNavigationTileState extends State<FocusNavigationTile> {
+class _LightNavigationTileState extends State<LightNavigationTile> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -60,9 +62,10 @@ class _FocusNavigationTileState extends State<FocusNavigationTile> {
                 height: 20,
               ),
               AnimatedContainer(
-                duration: const Duration(
-                  milliseconds: 500,
-                ),
+                duration: widget.animationDuration ??
+                    const Duration(
+                      milliseconds: 500,
+                    ),
                 width: 60,
                 height: widget.isActive ? 55 : 0,
                 decoration: widget.isActive

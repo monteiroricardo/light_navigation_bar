@@ -1,12 +1,12 @@
-part of 'focus_navigation_bar.dart';
+part of 'light_navigation_bar.dart';
 
-class FocusNavigationItem {
+class LightNavigationItem {
   final VoidCallback onTap;
   final IconData activeIcon;
   final IconData? inactiveIcon;
-  final FocusNavigationStyle style;
+  final LightNavigationStyle style;
 
-  const FocusNavigationItem({
+  const LightNavigationItem({
     required this.onTap,
     required this.activeIcon,
     this.inactiveIcon,

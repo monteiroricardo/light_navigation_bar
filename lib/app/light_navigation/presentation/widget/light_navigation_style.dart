@@ -1,11 +1,11 @@
-part of 'focus_navigation_bar.dart';
+part of 'light_navigation_bar.dart';
 
-class FocusNavigationStyle {
+class LightNavigationStyle {
   final Color primaryColor;
   final Color inactiveColor;
   final Color? shadowColor;
   final Color? barColor;
-  FocusNavigationStyle({
+  LightNavigationStyle({
     required this.primaryColor,
     required this.inactiveColor,
     this.shadowColor,

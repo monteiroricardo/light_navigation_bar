@@ -1,4 +1,4 @@
-import 'package:focus_navigation/app.dart';
+import 'app.dart';
 
 void main() {
   initApplication();
