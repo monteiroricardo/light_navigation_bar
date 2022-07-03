@@ -47,7 +47,7 @@ class _FocusNavigationTileState extends State<FocusNavigationTile> {
                             100,
                           ),
                         )
-                      : null,
+                      : const BoxDecoration(),
                   width: 60,
                   height: 6,
                 )
@@ -59,27 +59,27 @@ class _FocusNavigationTileState extends State<FocusNavigationTile> {
               const SizedBox(
                 height: 20,
               ),
-              Expanded(
-                child: Container(
-                  width: 60,
-                  decoration: widget.isActive
-                      ? BoxDecoration(
-                          gradient: LinearGradient(
-                            begin: Alignment.bottomCenter,
-                            end: Alignment.topCenter,
-                            colors: [
-                              widget.item.style.shadowColor?.withOpacity(0.2) ??
-                                  widget.item.style.primaryColor
-                                      .withOpacity(0.2),
-                              widget.item.style.shadowColor
-                                      ?.withOpacity(0.01) ??
-                                  widget.item.style.primaryColor
-                                      .withOpacity(0.01),
-                            ],
-                          ),
-                        )
-                      : null,
+              AnimatedContainer(
+                duration: const Duration(
+                  milliseconds: 500,
                 ),
+                width: 60,
+                height: widget.isActive ? 55 : 0,
+                decoration: widget.isActive
+                    ? BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.bottomCenter,
+                          end: Alignment.topCenter,
+                          colors: [
+                            widget.item.style.shadowColor?.withOpacity(0.2) ??
+                                widget.item.style.primaryColor.withOpacity(0.2),
+                            widget.item.style.shadowColor?.withOpacity(0.01) ??
+                                widget.item.style.primaryColor
+                                    .withOpacity(0.01),
+                          ],
+                        ),
+                      )
+                    : const BoxDecoration(),
               ),
             ],
           ),
