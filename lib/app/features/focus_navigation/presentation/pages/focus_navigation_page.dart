@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:focus_navigation/app/features/focus_navigation/presentation/style/focus_navigation_style.dart';
-import 'package:focus_navigation/app/features/focus_navigation/presentation/widgets/focus_navigation_item.dart';
 import 'package:focus_navigation/app/features/focus_navigation/presentation/widgets/focus_navigation_widget.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class FocusNavigationPage extends StatefulWidget {
   const FocusNavigationPage({Key? key}) : super(key: key);
@@ -11,49 +10,65 @@ class FocusNavigationPage extends StatefulWidget {
 }
 
 class _FocusNavigationPageState extends State<FocusNavigationPage> {
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFEFF1F4),
       body: Container(),
       bottomNavigationBar: FocusNavigationWidget(
         items: [
           FocusNavigationItem(
-            onTap: () {},
-            activeIcon: Icons.settings,
-            isActive: true,
-            focusNavigationStyle: FocusNavigationStyle(
+            onTap: () {
+              setState(() {
+                currentIndex = 0;
+              });
+            },
+            activeIcon: FontAwesomeIcons.house,
+            style: FocusNavigationStyle(
               primaryColor: Colors.blue,
-              inactiveColor: Colors.grey,
+              inactiveColor: Colors.grey.shade400,
             ),
           ),
           FocusNavigationItem(
-            onTap: () {},
-            activeIcon: Icons.settings,
-            isActive: false,
-            focusNavigationStyle: FocusNavigationStyle(
+            onTap: () {
+              setState(() {
+                currentIndex = 1;
+              });
+            },
+            activeIcon: FontAwesomeIcons.chartPie,
+            style: FocusNavigationStyle(
               primaryColor: Colors.blue,
-              inactiveColor: Colors.grey,
+              inactiveColor: Colors.grey.shade400,
             ),
           ),
           FocusNavigationItem(
-            onTap: () {},
-            activeIcon: Icons.settings,
-            isActive: false,
-            focusNavigationStyle: FocusNavigationStyle(
+            onTap: () {
+              print('object');
+              setState(() {
+                currentIndex = 2;
+              });
+            },
+            activeIcon: FontAwesomeIcons.solidUser,
+            style: FocusNavigationStyle(
               primaryColor: Colors.blue,
-              inactiveColor: Colors.grey,
+              inactiveColor: Colors.grey.shade400,
             ),
           ),
           FocusNavigationItem(
-            onTap: () {},
-            activeIcon: Icons.settings,
-            isActive: false,
-            focusNavigationStyle: FocusNavigationStyle(
+            onTap: () {
+              setState(() {
+                currentIndex = 3;
+              });
+            },
+            activeIcon: FontAwesomeIcons.gear,
+            style: FocusNavigationStyle(
               primaryColor: Colors.blue,
-              inactiveColor: Colors.grey,
+              inactiveColor: Colors.grey.shade400,
             ),
           ),
         ],
+        activeMenu: currentIndex,
       ),
     );
   }

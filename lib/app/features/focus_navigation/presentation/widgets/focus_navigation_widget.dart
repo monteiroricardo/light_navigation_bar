@@ -1,10 +1,20 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
-import 'package:focus_navigation/app/features/focus_navigation/presentation/widgets/focus_navigation_item.dart';
+
+part 'focus_navigation_item.dart';
+part 'focus_navigation_tile.dart';
+part 'focus_navigation_style.dart';
 
 class FocusNavigationWidget extends StatefulWidget {
   final List<FocusNavigationItem> items;
+  final int activeMenu;
 
-  const FocusNavigationWidget({super.key, required this.items});
+  const FocusNavigationWidget({
+    super.key,
+    required this.items,
+    required this.activeMenu,
+  });
 
   @override
   State<FocusNavigationWidget> createState() => _FocusNavigationWidgetState();
@@ -13,12 +23,20 @@ class FocusNavigationWidget extends StatefulWidget {
 class _FocusNavigationWidgetState extends State<FocusNavigationWidget> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 60,
+    return Container(
+      color: Colors.white,
+      height: 75,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          ...widget.items,
+          ...widget.items
+              .map(
+                (e) => FocusNavigationTile(
+                  item: e,
+                  isActive: widget.items.indexOf(e) == widget.activeMenu,
+                ),
+              )
+              .toList()
         ],
       ),
     );

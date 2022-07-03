@@ -1,6 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-
-import 'package:flutter/cupertino.dart';
+part of 'focus_navigation_widget.dart';
 
 class FocusNavigationStyle {
   final Color primaryColor;
